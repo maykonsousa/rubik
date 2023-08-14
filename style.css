@@ -1,0 +1,145 @@
+body {
+    background-color: #f5f5f3;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    gap:40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#cube {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    transform: rotateX(335deg) rotateY(335deg) rotateZ(0deg);
+    transform-style: preserve-3d;
+    transform-origin: 50% 50%;
+    border: solid red 1px;
+    transition: transform 2s linear;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotateX(335deg) rotateY(335deg) rotateZ(0deg);
+        }
+        to {
+            transform: rotateX(695deg) rotateY(695deg) rotateZ(360deg);
+        }
+    }
+
+    #cube.animate {
+        animation: spin 5s linear infinite;
+    }
+
+    .level, .col, .row {
+        transform-style: preserve-3d;
+    }
+
+    .level-2 {
+        transform: translateY(100px)
+    }
+
+    .level-3 {
+        transform: translateY(200px)
+    }
+
+    .col-2 {
+        transform: translateX(100px)
+    }
+
+    .col-3 {
+        transform: translateX(200px)
+    }
+
+    .row-1 {
+        transform: translateZ(-150px)
+    }
+
+    .row-2 {
+        transform: translateZ(-50px)
+    }
+
+    .row-3 {
+        transform: translateZ(50px)
+    }
+
+    .cube-item {
+        position:absolute;
+        width: 100px;
+        height: 100px;      
+        
+    }
+
+    .cube-item div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: solid 3px black;
+       border-radius:5px;
+    }
+
+    .cube-item div:nth-child(1) {
+        background-color: white;
+        transform: translateZ(50px);
+    }
+
+    .cube-item div:nth-child(2) {
+        background-color: yellow;
+        transform: rotateX(90deg) translateZ(50px);
+    }
+
+    .cube-item div:nth-child(3) {
+        background-color: orange;
+        transform: rotateX(-90deg) translateZ(50px);
+    }
+
+    .cube-item div:nth-child(4) {
+        background-color: red;
+        transform: rotateY(-90deg) translateZ(50px);
+    }
+
+    .cube-item div:nth-child(5) {
+        background-color: green;
+        transform: rotateY(90deg) translateZ(50px);
+    }
+
+    .cube-item div:nth-child(6) {
+        background-color: blue;
+        transform: translateZ(-50px);
+    }
+
+    .button-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 16px;
+        width: 300px;
+    }
+
+    button {
+        width: 100%;
+        border-radius: 4px;
+        border: none;
+        font-weight: bold;
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    button.start {
+        background-color: #4caf50;
+        color: white;
+    }
+
+    button.stop {
+        background-color: #f44336;
+        color: white;
+    }
